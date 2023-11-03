@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-blue: rgba(2, 89, 184, 1);
+    --color-bg-white: rgb(255, 255, 255);
+    --color-bg-blue-hover: rgb(5, 68, 136);
+    --color-footer: rgba(2, 13, 52, 1);
+    --text-ligth: rgb(255 255 255);
+    --text-gray: rgb(88, 85, 85);
+
+  }
+}
+
+.body{
+  margin: 0;
+  background: #ffff;
+  min-width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.body.light{
+  background: #ffff;
+ 
+}
+.body.dark{
+  background: #171622;
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(247, 244, 247) !important;
+  font-size: 25px !important;
+}
+
+.slick-dots li button:before {
+    font-size: 10px !important;
+    color: rgb(247, 244, 247) !important;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
