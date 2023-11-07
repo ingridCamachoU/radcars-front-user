@@ -32,7 +32,7 @@ const CardProduct = (product) => {
                     className='h-32 w-40'/>
             </picture>
             <h3 >{product?.name}</h3>
-            <p className='text-gray-500 font-semibold'>{product?.mark_model.mark.name}</p>
+            <p className='text-gray-500 font-semibold'>{product?.mark_model.mark.name} ({product?.mark_model.name})</p>
             <p className='flex justify-between'>
                 <span className='font-bold text-lg'>$ {converterPrice(price)}</span> 
                 {

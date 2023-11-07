@@ -1,27 +1,17 @@
 import LayoutBase from '../../layout/LayoutBase';
 import CardProduct from '../../components/card/CardProduct';
 import FilterSearch from './FilterSearch';
-import { endPoints } from '../../services/endPoints/endPoints';
-import { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
 import { Link } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
-import CardPoster from '../../components/card/poster/CardPoster';
+import { useUserContext } from '../../context/UserContext';
 
 const ProductIndex = () => {
 
-    const [urlProduct, setUrlProduct] = useState(endPoints.products.getProducts);
-
-    //--- Load Data Product---//
-    const { data:dataProduct, loadingData:loadDataProduct, error, loading } = useFetch(urlProduct);
-
-    useEffect(() => {
-        loadDataProduct();
-    }, [urlProduct]);
+    const { loading, dataProduct, error } = useUserContext();
 
     return (
         <LayoutBase>
-            <FilterSearch setUrlProduct={setUrlProduct}/>
+            <FilterSearch />
             
             {
                 loading ?
@@ -44,7 +34,7 @@ const ProductIndex = () => {
                                 }     
                             </section> 
                         :
-                            <div className='w-full flex justify-center items-center'>No hay coincidencias</div>
+                            <div className='w-full flex justify-center items-center mt-10'>No hay coincidencias</div>
                     }
                     </div>
             }

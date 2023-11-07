@@ -9,7 +9,7 @@ const BreadCrumbs = () => {
         const pathnames = pathname.split('/').filter((item) => item);
  
         return (
-            <div className="flex gap-1 p-1 font-light pl-6 shadow-md">
+            <div className="flex gap-1 p-1 font-light pl-6 py-4 md:mt-36 sm:mt-24 mt-28">
                 { pathnames.length > 0 
                     ? (
                         <div>

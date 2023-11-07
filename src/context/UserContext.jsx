@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react"; ; 
+import { createContext, useContext, useEffect, useState } from "react";import { endPoints } from "../services/endPoints/endPoints";
+import { useFetch } from "../hooks/useFetch";
+ ; 
 
 const UserContext = createContext();
 
@@ -7,6 +9,19 @@ export default function UserContextProvider({children}){
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('shopping')) || []);
     const [total, setTotal] = useState(JSON.parse(localStorage.getItem('total')) || 0);
     const [countProducts, setCountProducts] = useState(JSON.parse(localStorage.getItem('count')) || 0);
+
+
+    // search
+    const [search, setSearch] = useState('');
+    const [urlProduct, setUrlProduct] = useState(endPoints.products.getProducts);
+
+    //--- Load Data Product---//
+    const { data:dataProduct, loadingData:loadDataProduct, error, loading } = useFetch(urlProduct);
+
+    useEffect(() => {
+        loadDataProduct();
+    }, [urlProduct]);
+
 
     // Save localStorage
     const saveLocal = () =>{
@@ -77,7 +92,10 @@ export default function UserContextProvider({children}){
     };
 
     return(
-        <UserContext.Provider value={{ cart, setCart, onAddProduct, decrase, deleteProduct, countProducts, total, setCountProducts, setTotal}}>{children}</UserContext.Provider>
+        <UserContext.Provider value={{ cart, setCart, onAddProduct, decrase, deleteProduct, countProducts, total, setCountProducts, setTotal,
+
+            dataProduct, setUrlProduct, urlProduct, search, setSearch, loadDataProduct, error, loading
+        }}>{children}</UserContext.Provider>
     )
 }
 

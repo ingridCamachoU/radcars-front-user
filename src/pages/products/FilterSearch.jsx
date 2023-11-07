@@ -1,7 +1,8 @@
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+// import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
 import { endPoints } from '../../services/endPoints/endPoints';
 import { useFetch } from '../../hooks/useFetch';
+import { useUserContext } from '../../context/UserContext';
 
 const initial={
     'category': '',
@@ -9,7 +10,9 @@ const initial={
     'model': ''
 };
 
-const FilterSearch = ({setUrlProduct}) => {
+const FilterSearch = () => {
+
+    const { setUrlProduct } = useUserContext();
 
     const urlCategorie = endPoints.categories.getCategories;
     const urlMark = endPoints.marks.getMarks;
@@ -20,13 +23,8 @@ const FilterSearch = ({setUrlProduct}) => {
     const [category, setCategory] = useState('');
     const [model, setModel] = useState('');
     const [mark, setMark] = useState('');
-    const [search, setSearch] = useState('');
     const [urlFilter, setUrlFilter] = useState('')
     const [modifUrl, setModifUrl] = useState(initial);
-
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
-    };
 
     const handleCategorie = (e) => {
         setCategory(e.target.value);
@@ -64,10 +62,6 @@ const FilterSearch = ({setUrlProduct}) => {
         }
     };
 
-    const searchBtn = () => {
-        setUrlProduct(endPoints.products.getSearchProducts(search));
-    }
-
     const filterBtn = () => {
         setUrlProduct(urlFilter);
     };
@@ -77,7 +71,6 @@ const FilterSearch = ({setUrlProduct}) => {
         setCategory('');
         setMark('');
         setModel('');
-        setSearch('');
         setUrlProduct(urlProduct);
     };
 
@@ -93,7 +86,7 @@ const FilterSearch = ({setUrlProduct}) => {
     }, [urlCategorie, urlMark]);
 
   return (
-        <div className='bg-background-blue flex w-full justify-between py-2 px-4 mt-8 flex-wrap gap-2'>
+        <div className='bg-background-blue flex w-full justify-around py-2 px-8 mt-2 flex-wrap gap-2'>
             <div className='bg-background-white font-light py-1 px-4  rounded lg:w-1/6 sm:w-1/4 w-full m-1'>
                 <select onChange={handleCategorie} value={category} name='category' className='w-full outline-0'>
                     <option>Categoria</option>
@@ -121,7 +114,7 @@ const FilterSearch = ({setUrlProduct}) => {
                 </select>
             </div>
 
-            <div className='flex gap-2 items-center'>
+            <div className='flex gap-4 items-center'>
                 <button 
                     className='bg-background-white text-text-blue px-4 py-1 rounded font-medium' 
                     type='submit' onClick={filterBtn}>Filtrar
@@ -129,19 +122,6 @@ const FilterSearch = ({setUrlProduct}) => {
                 <button 
                     className='text-text-ligth'
                     type='reset' onClick={resetFilter}>Reset</button>
-            </div>
-
-            <div className='flex gap-4 lg:w-2/6 w-full justify-end'>
-                <input 
-                    placeholder='Search' 
-                    value={search} type='search'
-                    onChange={handleSearch}
-                    className='bg-background-white font-light py-1 px-4 rounded lg:w-8/12 sm:w-3/6 w-full m-1' />
-                
-                <button 
-                    type='submit' onClick={searchBtn}
-                    className='bg-background-white text-text-blue px-4 py-1 rounded font-medium m-1'><MagnifyingGlassIcon className='h-4 w-5'/>
-                </button>  
             </div>
         </div>
     );

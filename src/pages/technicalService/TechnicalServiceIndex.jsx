@@ -11,7 +11,7 @@ const TechnicalServiceIndex = () => {
         <LayoutBase>
             <div className='max-w-screen-xl'>
                 <section className='w-full flex lg:flex-row flex-col mt-4 p-2 gap-6'>
-                    <div className='lg:w-2/4 w-full justify-center flex flex-col gap-2 sm:px-6 px-1'>
+                    <div className='lg:w-2/4 w-full justify-center flex flex-col gap-2 sm:px-6 px-1 items-center'>
                         <h1 className='font-bold text-text-gray text-lg mb-4 pl-2'>Portafolio de Servicios</h1>
                             <CardService title={'Venta y reparación de radiadores'} urlImg={radiador} altImg={'radiador'}/>
                             <CardService title={'Mantenimiento preventivo'} urlImg={mecanico} altImg={'mecanico'}/>
