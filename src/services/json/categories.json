@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Baterias"
+    },
+    { 
+        "id": 2,
+        "name": "Iluminación"
+    },
+    {
+        "id": 3,
+        "name": "Lubricantes"
+    },
+    {
+        "id": 4,
+        "name": "Radiadores"
+    },
+    {
+        "id": 5,
+        "name": "Tapas"
+    }
+]

@@ -10,5 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <DarkModeProvider>
             <RouterProvider router={router} />
         </DarkModeProvider>
-    </React.StrictMode>,
-)
+    </React.StrictMode>
+);

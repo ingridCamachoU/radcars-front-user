@@ -1,13 +1,12 @@
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import { useEffect } from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Loading from './Loading';
 import CardProduct from './card/CardProduct';
+import { useEffect } from 'react';
 
-const Sliders = ({url, data, loadingData, loading}) => {
-
+const Sliders = ({ data, loading, loadingData, url }) => {
     const settings = {
         dots: true,
         infinite: true,
@@ -44,34 +43,31 @@ const Sliders = ({url, data, loadingData, loading}) => {
             },
         ],
     };
-
     useEffect(() => {
         loadingData();
     }, [url]);
     return (
         <>
-            {
-                loading ?
-                    <Loading />
-                :
-                <div className='w-11/12 m-auto'>
-                    {
-                        data.length > 0 &&
-                            <Slider {...settings}>
-                                {      
-                                    data.map((product) =>(   
-                                        <Link key={product?.id} to={`/productos/${product.name}`} state={product}>
-                                            <CardProduct 
-                                            {...product}/>
-                                        </Link>
-                                    ))
-                                }
-                            </Slider>
-                    }
+            {loading ? (
+                <Loading />
+            ) : (
+                <div className="w-11/12 m-auto">
+                    {data.length > 0 && (
+                        <Slider {...settings}>
+                            {data.map((product) => (
+                                <Link
+                                    key={product?.id}
+                                    to={`/productos/${product.name}`}
+                                    state={product}
+                                >
+                                    <CardProduct {...product} />
+                                </Link>
+                            ))}
+                        </Slider>
+                    )}
                 </div>
-            }
+            )}
         </>
-        
     );
 };
 

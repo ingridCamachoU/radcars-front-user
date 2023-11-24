@@ -1,11 +1,11 @@
-import { createBrowserRouter } from "react-router-dom";
-import PrivateLayout from "../layout/PrivateLayout";
+import { createBrowserRouter } from 'react-router-dom';
+import PrivateLayout from '../layout/PrivateLayout';
 import HomeIndex from '../pages/home/HomeIndex';
 import ProductIndex from '../pages/products/ProductIndex';
-import ProductDetails from "../pages/products/ProductDetails";
-import ShoppingCart from "../pages/products/ShoppingCart";
-import ContacUsIndex from "../pages/contactUs/ContacUsIndex";
-import TechnicalServiceIndex from "../pages/technicalService/TechnicalServiceIndex";
+import ProductDetails from '../pages/products/ProductDetails';
+import ShoppingCart from '../pages/products/ShoppingCart';
+import ContacUsIndex from '../pages/contactUs/ContacUsIndex';
+import TechnicalServiceIndex from '../pages/technicalService/TechnicalServiceIndex';
 
 export const router = createBrowserRouter([
     {
@@ -14,11 +14,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HomeIndex />
+                element: <HomeIndex />,
             },
             {
                 path: 'productos',
-                element: <ProductIndex />
+                element: <ProductIndex />,
             },
             {
                 path: 'productos/:productName',
@@ -26,16 +26,16 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'shopping',
-                element: <ShoppingCart />
+                element: <ShoppingCart />,
             },
             {
                 path: 'contactanos',
-                element: <ContacUsIndex />
+                element: <ContacUsIndex />,
             },
             {
                 path: 'servicios',
-                element: <TechnicalServiceIndex />
-            }
-        ]
-    }
-])
+                element: <TechnicalServiceIndex />,
+            },
+        ],
+    },
+]);

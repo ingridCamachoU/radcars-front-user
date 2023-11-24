@@ -1,0 +1,278 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Radiador Chevrolet Silverado 2",
+            "description": "HD 3500 2011 - 2014",
+            "net_price": 522840.0,
+            "mark_model": {
+                "id": 1,
+                "name": "Aveo",
+                "mark": {
+                    "id": 1,
+                    "name": "Chevrolet"
+                }
+            },
+            "category": {
+                "id": 1,
+                "name": "Radiadores"
+            },
+            "images": [
+                "https://dl.dropboxusercontent.com/s/50407qqfq6k9gkp/D_NQ_NP_959479-MCO53648353149_022023-O.webp?dl=0"
+            ],
+            "transmission": "Automático"
+        },
+        {
+            "id": 2,
+            "name": "Radiador Rastrero",
+            "description": "HD 3500 2011 - 2014",
+            "net_price": 522840.0,
+            "mark_model": {
+                "id": 1,
+                "name": "Aveo",
+                "mark": {
+                    "id": 1,
+                    "name": "Chevrolet"
+                }
+            },
+            "category": {
+                "id": 1,
+                "name": "Radiadores"
+            },
+            "images": [
+                "https://dl.dropboxusercontent.com/s/50407qqfq6k9gkp/D_NQ_NP_959479-MCO53648353149_022023-O.webp?dl=0"
+            ],
+            "transmission": "Automático"
+        },
+        {
+            "id": 3,
+            "name": "Tapa Silverado",
+            "description": "HD 3500 2011 - 2014",
+            "net_price": 522840.0,
+            "mark_model": {
+                "id": 1,
+                "name": "Aveo",
+                "mark": {
+                    "id": 1,
+                    "name": "Chevrolet"
+                }
+            },
+            "category": {
+                "id": 1,
+                "name": "Radiadores"
+            },
+            "images": [
+                "https://dl.dropboxusercontent.com/s/50407qqfq6k9gkp/D_NQ_NP_959479-MCO53648353149_022023-O.webp?dl=0"
+            ],
+            "transmission": "Automático"
+        },
+        {
+            "id": 4,
+            "name": "Lubricante Chevrolet Silverado",
+            "description": "HD 3500 2011 - 2014",
+            "net_price": 522840.0,
+            "mark_model": {
+                "id": 1,
+                "name": "Aveo",
+                "mark": {
+                    "id": 1,
+                    "name": "Chevrolet"
+                }
+            },
+            "category": {
+                "id": 1,
+                "name": "Radiadores"
+            },
+            "images": [
+                "https://dl.dropboxusercontent.com/s/50407qqfq6k9gkp/D_NQ_NP_959479-MCO53648353149_022023-O.webp?dl=0"
+            ],
+            "transmission": "Automático"
+        },
+        {
+            "id": 5,
+            "name": "Seo Chevrolet",
+            "description": "HD 3500 2011 - 2014",
+            "net_price": 522840.0,
+            "mark_model": {
+                "id": 1,
+                "name": "Aveo",
+                "mark": {
+                    "id": 1,
+                    "name": "Chevrolet"
+                }
+            },
+            "category": {
+                "id": 1,
+                "name": "Radiadores"
+            },
+            "images": [
+                "https://dl.dropboxusercontent.com/s/50407qqfq6k9gkp/D_NQ_NP_959479-MCO53648353149_022023-O.webp?dl=0"
+            ],
+            "transmission": "Automático"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Baterias"
+        },
+        {
+            "id": 2,
+            "name": "Iluminación"
+        },
+        {
+            "id": 3,
+            "name": "Lubricantes"
+        },
+        {
+            "id": 4,
+            "name": "Radiadores"
+        },
+        {
+            "id": 5,
+            "name": "Tapas"
+        }
+    ],
+    "marks": [
+        {
+            "id": 1,
+            "name": "Chevrolet",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Camaro"
+                },
+                {
+                    "id": 2,
+                    "name": "Spark"
+                },
+                {
+                    "id": 3,
+                    "name": "Silverado"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Ford",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Fiesta"
+                },
+                {
+                    "id": 2,
+                    "name": "Mustang"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Honda",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Accord"
+                },
+                {
+                    "id": 2,
+                    "name": "Civic"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Hyundai",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Ix35"
+                },
+                {
+                    "id": 2,
+                    "name": "Kona"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Kia",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Picanto"
+                },
+                {
+                    "id": 2,
+                    "name": "Niro"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Mazda",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Mazda2"
+                },
+                {
+                    "id": 2,
+                    "name": "Mazda6"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Nissan",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Murano"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Renault",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Twingo"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Suzuki",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Grand Vitara"
+                },
+                {
+                    "id": 2,
+                    "name": "Swift"
+                },
+                {
+                    "id": 3,
+                    "name": "SX4 S-Cross"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Toyota",
+            "models": [
+                {
+                    "id": 1,
+                    "name": "Yaris"
+                },
+                {
+                    "id": 2,
+                    "name": "Hilux"
+                }
+            ]
+        }
+    ]
+}

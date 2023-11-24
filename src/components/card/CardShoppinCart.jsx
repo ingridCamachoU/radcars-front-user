@@ -2,33 +2,56 @@ import sinImagen from '../../assets/sin-imagen.png';
 import { TrashIcon } from '@heroicons/react/24/solid';
 import { converterPrice } from '../../utils/ converter';
 
-const CardShoppinCart = ({name, images, net_price, quantity, onAddProduct, decrase, deleteProduct}) => {
+const CardShoppinCart = ({
+    name,
+    images,
+    net_price,
+    quantity,
+    onAddProduct,
+    decrase,
+    deleteProduct,
+}) => {
+    const price = parseInt(net_price * quantity);
 
-    const price = parseInt(net_price *quantity);
-
-    return ( 
-        <div className='items-center flex justify-between mt-8 bg-white p-2 flex-wrap sm:flex-row flex-col w-full sm:gap-0 gap-4'>
-            <div className='flex sm:w-8/12 w-full items-center'>
-                <picture className='sm:w-1/5 w-1/3'>
-                    <img className='w-16 h-16' src={images.length > 0 ? images : sinImagen}  alt="sin imagen"/>
+    return (
+        <div className="items-center flex justify-between mt-8 bg-white p-2 flex-wrap sm:flex-row flex-col w-full sm:gap-0 gap-4">
+            <div className="flex sm:w-8/12 w-full items-center">
+                <picture className="sm:w-1/5 w-1/3">
+                    <img
+                        className="w-16 h-16"
+                        src={images.length > 0 ? images : sinImagen}
+                        alt="sin imagen"
+                    />
                 </picture>
-                
-                <p className='font-light sm:w-3/4 w-11/12'>{name}</p>   
+
+                <p className="font-light sm:w-3/4 w-11/12">{name}</p>
             </div>
-            
-            <div className='flex gap-2 sm:w-4/12 w-full items-center justify-between'>
-                <div className='flex gap-1 bg-slate-100 border shadow-sm p-1 rounded'>
-                    <button className='border-r  hover:bg-slate-200 cursor-pointer disabled:text-gray-500 disabled:pointer-events-none active:scale-95 px-2' disabled={quantity===1} onClick={decrase}>-</button>
+
+            <div className="flex gap-2 sm:w-4/12 w-full items-center justify-between">
+                <div className="flex gap-1 bg-slate-100 border shadow-sm p-1 rounded">
+                    <button
+                        className="border-r  hover:bg-slate-200 cursor-pointer disabled:text-gray-500 disabled:pointer-events-none active:scale-95 px-2"
+                        disabled={quantity === 1}
+                        onClick={decrase}
+                    >
+                        -
+                    </button>
                     <p>{quantity}</p>
-                    <button className='border-l px-2  hover:bg-slate-200 cursor-pointer active:scale-95 disabled:text-gray-500 disabled:pointer-events-none' disabled={quantity>=10} onClick={onAddProduct}>+</button>
-                </div>  
-                <div className='flex w-4/6 justify-between px-4'>
-                    <p>$ {converterPrice(price)}</p>
-                    <button onClick={deleteProduct} >
-                        <TrashIcon className="h-6 w-6 hover:text-text-blue"/>
+                    <button
+                        className="border-l px-2  hover:bg-slate-200 cursor-pointer active:scale-95 disabled:text-gray-500 disabled:pointer-events-none"
+                        disabled={quantity >= 10}
+                        onClick={onAddProduct}
+                    >
+                        +
                     </button>
                 </div>
-            </div>       
+                <div className="flex w-4/6 justify-between px-4">
+                    <p>$ {converterPrice(price)}</p>
+                    <button onClick={deleteProduct}>
+                        <TrashIcon className="h-6 w-6 hover:text-text-blue" />
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

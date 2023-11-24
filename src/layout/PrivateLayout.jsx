@@ -1,19 +1,18 @@
-import { useContext } from "react";
-import { DarkMode } from "../context/DarkMode";
-import Header from "../components/header/Header";
-import { Outlet } from "react-router-dom";
-import BreadCrumbs from "../components/BreadCrumbs";
-import Footer from "../components/footer/Footer";
-import WhaspBtn from "../components/WhaspBtn";
-import UserContextProvider from "../Context/UserContext"
+import { useContext } from 'react';
+import { DarkMode } from '../context/DarkMode';
+import Header from '../components/header/Header';
+import { Outlet } from 'react-router-dom';
+import BreadCrumbs from '../components/BreadCrumbs';
+import Footer from '../components/footer/Footer';
+import WhaspBtn from '../components/WhaspBtn';
+import UserContextProvider from '../context/UserContext';
 
 const PrivateLayout = () => {
-
-    const {darkMode} = useContext(DarkMode); 
+    const { darkMode } = useContext(DarkMode);
 
     return (
         <UserContextProvider>
-            <div className={darkMode ? `body dark` : `body light`}> 
+            <div className={darkMode ? `body dark` : `body light`}>
                 <Header />
                 <BreadCrumbs />
                 <Outlet />
@@ -21,7 +20,6 @@ const PrivateLayout = () => {
                 <Footer />
             </div>
         </UserContextProvider>
-        
     );
 };
 

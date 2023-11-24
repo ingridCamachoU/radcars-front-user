@@ -4,20 +4,25 @@ import customerSupport from '../../../assets/iconPage/customerSupport.svg';
 import security from '../../../assets/iconPage/security.svg';
 import warranty from '../../../assets/iconPage/warranty.svg';
 
+let posts = [
+    { name: 'Envíos Nacionales', link: [carr] },
+    { name: 'Atención al cliente', link: [customerSupport] },
+    { name: 'Productos con garantía', link: [warranty] },
+    { name: 'Compra segura', link: [security] },
+];
+
 const CardPoster = () => {
     return (
-        <div className='flex w-full sm:flex-row flex-col'>
-            <div className='flex w-full'>
-                <ItemPoster imgUrl={carr} name={'envíos nacionales'} title={'Envíos Nacionales'}/>
-
-                <ItemPoster imgUrl={customerSupport} name={'atención al cliente'} title={'Atención al cliente'}/>
-            </div>
-
-            <div className='flex w-full'>
-                <ItemPoster imgUrl={warranty} name={'productos con garantía'} title={'Productos con garantía'}/>
-
-                <ItemPoster imgUrl={security} name={'compra segura'} title={'Compra segura'}/>
-            </div>
+        <div className="flex w-full sm:flex-row flex-col">
+            {posts.map((post) => (
+                <div className="flex w-full" key={post.name}>
+                    <ItemPoster
+                        imgUrl={post.link}
+                        name={post.name}
+                        title={post.name}
+                    />
+                </div>
+            ))}
         </div>
     );
 };
