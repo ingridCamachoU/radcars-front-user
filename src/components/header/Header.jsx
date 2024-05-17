@@ -62,11 +62,14 @@ const Header = () => {
         <header className="shadow-md w-full fixed top-0 left-0">
             <div className="md:flex  items-center justify-between bg-white py-2 md:px-10 px-4">
                 <div className="flex md:w-11/12  w-full justify-between items-center">
-                    <img
-                        src={logo}
-                        alt="Logo Radcars"
-                        className="md:w-24 md:h-20 w-20 h-18 pt-2 pl-2"
-                    />
+                    <Link to={''}>
+                        <img
+                            src={logo}
+                            alt="Logo Radcars"
+                            className="md:w-24 md:h-20 w-20 h-18 pt-2 pl-2"
+                        />
+                    </Link>
+
                     <input
                         type="search"
                         placeholder="Search"
@@ -86,8 +89,12 @@ const Header = () => {
                             )}
                         </p>
                     </Link>
-                    <UserCircleIcon className="h-6 w-6 hover:text-text-blue " />
-                    <MoonIcon className="h-6 w-6 hover:text-text-blue" />
+
+                    <Link to={'login'}>
+                        <UserCircleIcon className="h-6 w-6 hover:text-text-blue " />
+                    </Link>
+
+                    <MoonIcon className="h-6 w-6 hover:text-text-blue hover:cursor-pointer" />
                     {!isOpenMenu ? (
                         <Bars3Icon
                             onClick={openOrCloseMenu}

@@ -1,7 +1,8 @@
-const LayoutBase = ({ children }) => {
+
+const LayoutBase = ({children}) => {
     return (
         <main className="flex flex-col items-center justify-center mb-6 min-h-full">
-            {children}
+            {children}  
         </main>
     );
 };

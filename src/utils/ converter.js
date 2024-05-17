@@ -1,16 +1,17 @@
-export const capitalLetter = (str) => {
-    if (str) {
+
+export const capitalLetter = ( str ) => { 
+    if(str){
         return str[0].toUpperCase() + str.substring(1);
     }
 };
 
-export const converterPrice = (price) => {
-    if (price) {
+export const converterPrice = (price) =>{
+    if(price){
         var result = price?.toLocaleString({
-            style: 'currency',
-            currency: 'CLP',
+            style: "currency",
+            currency: "CLP"
         });
 
-        return result.replaceAll(',', '.');
+        return result.replaceAll(',', '.');  
     }
 };

@@ -6,6 +6,7 @@ import ProductDetails from '../pages/products/ProductDetails';
 import ShoppingCart from '../pages/products/ShoppingCart';
 import ContacUsIndex from '../pages/contactUs/ContacUsIndex';
 import TechnicalServiceIndex from '../pages/technicalService/TechnicalServiceIndex';
+import Login from '../pages/login/Login';
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path: 'servicios',
                 element: <TechnicalServiceIndex />,
+            },
+            {
+                path: 'login',
+                element: <Login />,
             },
         ],
     },
