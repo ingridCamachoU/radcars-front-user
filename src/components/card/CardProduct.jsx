@@ -20,7 +20,7 @@ const CardProduct = (product) => {
         });
     };
 
-    const price = parseInt(product?.net_price);
+    const price = parseInt(product?.price);
 
     return (
         <div className="w-70 p-4 gap-4 flex flex-col shadow-sm hover:shadow-md border border-gray-100 bg-white">
