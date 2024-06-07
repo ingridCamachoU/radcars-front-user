@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { capitalLetter } from '../utils/ converter';
 
 const BreadCrumbs = () => {
@@ -24,8 +24,7 @@ const BreadCrumbs = () => {
                     const isLast = index === pathnames.length - 1;
                     return isLast ? (
                         <div key={index}>
-                            <span className="text-gray-400">/</span>{' '}
-                            {capitalLetter(name.replaceAll('%20', ' '))}
+                            <span className="text-gray-400">/</span> {name}
                         </div>
                     ) : (
                         <div key={index}>

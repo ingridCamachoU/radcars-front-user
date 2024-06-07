@@ -112,12 +112,7 @@ const ShoppingCart = () => {
                     También te puede interesar
                 </h3>
                 <section className="w-full bg-background-blue py-10 flex px-6 my-6">
-                    <Sliders
-                        url={urlProduct}
-                        data={data}
-                        loadingData={loadingData}
-                        loading={loading}
-                    />
+                    <Sliders dataProduct={data} />
                 </section>
             </div>
         </LayoutBase>

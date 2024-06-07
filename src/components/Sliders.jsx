@@ -5,11 +5,16 @@ import 'slick-carousel/slick/slick-theme.css';
 import Loading from './Loading';
 import CardProduct from './card/CardProduct';
 import { useEffect } from 'react';
+import { useFetch } from '../hooks/useFetch';
+import { endPoints } from '../services/endPoints/endPoints';
 
-const Sliders = ({ data, loading, loadingData, url }) => {
+const Sliders = ({ productId = null, dataProduct = null }) => {
+    const urlCategorie = `${endPoints.products.getProducts}?exclude=true&category=${productId}`;
+    const { data, loadingData, loading } = useFetch(urlCategorie);
+
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -22,7 +27,7 @@ const Sliders = ({ data, loading, loadingData, url }) => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    infinite: true,
+                    infinite: false,
                     dots: true,
                 },
             },
@@ -43,27 +48,45 @@ const Sliders = ({ data, loading, loadingData, url }) => {
             },
         ],
     };
+
     useEffect(() => {
         loadingData();
-    }, [url]);
+    }, [urlCategorie]);
+
     return (
         <>
             {loading ? (
                 <Loading />
             ) : (
                 <div className="w-11/12 m-auto">
-                    {data.length > 0 && (
+                    {dataProduct ? (
                         <Slider {...settings}>
-                            {data.map((product) => (
+                            {dataProduct.data.map((product) => (
                                 <Link
                                     key={product?.id}
-                                    to={`/productos/${product.name}`}
+                                    to={`/productos/${product.id}`}
                                     state={product}
                                 >
                                     <CardProduct {...product} />
                                 </Link>
                             ))}
                         </Slider>
+                    ) : (
+                        <>
+                            {data?.data?.length > 0 && (
+                                <Slider {...settings}>
+                                    {data.data.map((product) => (
+                                        <Link
+                                            key={product?.id}
+                                            to={`/productos/${product.id}`}
+                                            state={product}
+                                        >
+                                            <CardProduct {...product} />
+                                        </Link>
+                                    ))}
+                                </Slider>
+                            )}
+                        </>
                     )}
                 </div>
             )}

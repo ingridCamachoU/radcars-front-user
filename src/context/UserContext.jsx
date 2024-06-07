@@ -110,7 +110,6 @@ export default function UserContextProvider({ children }) {
         setCart(newCart);
     };
 
-    console.log(dataProduct);
     return (
         <UserContext.Provider
             value={{

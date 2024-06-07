@@ -31,8 +31,6 @@ const Header = () => {
         }
     };
 
-    const { darkMode } = useContext(DarkMode);
-
     const openOrCloseMenu = () => {
         setIsOpenMenu(!isOpenMenu);
     };
@@ -94,16 +92,15 @@ const Header = () => {
                         <UserCircleIcon className="h-6 w-6 hover:text-text-blue " />
                     </Link>
 
-                    <MoonIcon className="h-6 w-6 hover:text-text-blue hover:cursor-pointer" />
                     {!isOpenMenu ? (
                         <Bars3Icon
                             onClick={openOrCloseMenu}
-                            className="h-6 w-6 hover:text-text-blue md:hidden duration-500"
+                            className="h-6 w-6 hover:text-text-blue md:hidden duration-500 cursor-pointer"
                         />
                     ) : (
                         <XMarkIcon
                             onClick={openOrCloseMenu}
-                            className="h-6 w-6 hover:text-text-blue md:hidden duration-500 transition-all "
+                            className="h-6 w-6 hover:text-text-blue md:hidden duration-500 transition-all cursor-pointer"
                         />
                     )}
                 </div>

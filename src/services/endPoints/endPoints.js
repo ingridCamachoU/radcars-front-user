@@ -6,6 +6,7 @@ export const endPoints = {
         getProducts: `${URL}${VERSION}/products/`,
         getSearchProducts: (product) =>
             `${URL}${VERSION}/products/?search=${product}`,
+        getDetailProducts: (product) => `${URL}${VERSION}/products/${product}`,
     },
     marks: {
         getMarks: `${URL}${VERSION}/marks/`,

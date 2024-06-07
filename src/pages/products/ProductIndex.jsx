@@ -21,7 +21,7 @@ const ProductIndex = () => {
                             {dataProduct.data.map((product) => (
                                 <Link
                                     key={product.id}
-                                    to={product.name}
+                                    to={product.id}
                                     state={product}
                                 >
                                     <CardProduct {...product} />
