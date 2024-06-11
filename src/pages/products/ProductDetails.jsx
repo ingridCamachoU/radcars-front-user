@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -10,7 +11,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { endPoints } from '../../services/endPoints/endPoints';
 import CardPoster from '../../components/card/poster/CardPoster';
 import Loading from '../../components/Loading';
-import { useEffect, useState } from 'react';
+import flayerCotizanos from '../../assets/flayer-contizanos.svg';
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -46,13 +47,13 @@ const ProductDetails = () => {
             {loading ? (
                 <Loading />
             ) : (
-                <div>
+                <div className="max-w-screen-xl w-full">
                     {dataProduct?.data?.length > 0 ? (
-                        <div>
+                        <div className="w-full flex justify-center items-center">
                             {dataProduct?.data?.map((product) => (
                                 <div
-                                    className="w-full max-w-screen-xl"
                                     key={product?.id}
+                                    className="lg:w-8/12 w-11/12 m-1"
                                 >
                                     <section className="w-full mt-6 p-4 flex shadow-sm md:flex-row flex-col">
                                         <div className="md:w-2/3 w-full">
@@ -207,10 +208,18 @@ const ProductDetails = () => {
                                     </section>
 
                                     <CardPoster />
-                                    <h3 className="text-lg text-text-gray font-bold mt-6">
+
+                                    <picture>
+                                        <img
+                                            src={flayerCotizanos}
+                                            alt="postPage"
+                                        />
+                                    </picture>
+                                    <h3 className="text-lg text-text-gray font-bold mt-8">
                                         También te puede interesar
                                     </h3>
-                                    <section className="w-full bg-background-blue py-8 flex px-6 my-6 ">
+
+                                    <section className="w-full bg-background-blue py-10 flex px-6 my-6">
                                         <Sliders
                                             productId={product?.category?.id}
                                         />

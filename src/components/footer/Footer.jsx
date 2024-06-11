@@ -17,13 +17,13 @@ const Footer = () => {
                         <strong>NUESTRAS OFERTAS!</strong>
                     </p>
                 </div>
-                <div className="gap-4 flex">
+                <div className="flex-row md:flex-col">
                     <input
                         type="text"
                         placeholder="Dirección correo electrónico"
-                        className="py-2 px-4 w-80"
+                        className="py-2 px-4 md:w-80 w-60"
                     />
-                    <button className="bg-background-footer p-2 text-text-ligth font-bold rounded-md">
+                    <button className="bg-background-footer p-2 text-text-ligth font-bold rounded-md md:ml-4 mt-4">
                         SUSCRIBIR
                     </button>
                 </div>

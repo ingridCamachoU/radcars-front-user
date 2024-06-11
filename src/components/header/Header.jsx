@@ -20,7 +20,8 @@ const Header = () => {
 
     const activesStyle =
         'bg-background-blue text-text-ligth rounded p-1 text-sm cursor-pointer';
-    const disabledStyle = 'flex font-medium text-sm p-1 hover:text-text-blue';
+    const disabledStyle =
+        'flex font-medium text-sm p-1 hover:text-text-blue cursor-pointer';
 
     // search
     const handleSearch = (e) => {
@@ -57,7 +58,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="shadow-md w-full fixed top-0 left-0">
+        <header className="shadow-md w-full fixed top-0 left-0 z-20">
             <div className="md:flex  items-center justify-between bg-white py-2 md:px-10 px-4">
                 <div className="flex md:w-11/12  w-full justify-between items-center">
                     <Link to={''}>
@@ -107,8 +108,8 @@ const Header = () => {
             </div>
             <nav>
                 <ul
-                    className={`md:flex md:items-center pb-4 absolute md:static bg-slate-50 md:z-auto z-[-1] left-0 w-full md:w-full pt-2 md:justify-center md:pb-4 md:pl-0 pl-9 transition-all duration-500 ease-in ${
-                        isOpenMenu ? 'top-20 shadow-md' : 'top-[-490px]'
+                    className={`md:flex md:items-center pb-4 absolute md:static bg-slate-50 md:z-auto left-0 w-full md:w-full pt-2 md:justify-center md:pb-4 md:pl-0 pl-9 transition-all duration-700 ease-in ${
+                        isOpenMenu ? 'top-30 shadow-md' : 'top-[-490px]'
                     }`}
                 >
                     {Links.map((link) => (

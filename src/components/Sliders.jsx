@@ -58,10 +58,10 @@ const Sliders = ({ productId = null, dataProduct = null }) => {
             {loading ? (
                 <Loading />
             ) : (
-                <div className="w-11/12 m-auto">
+                <div className="w-11/12 m-auto ">
                     {dataProduct ? (
                         <Slider {...settings}>
-                            {dataProduct.data.map((product) => (
+                            {dataProduct?.data.map((product) => (
                                 <Link
                                     key={product?.id}
                                     to={`/productos/${product.id}`}
