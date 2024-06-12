@@ -1,5 +1,5 @@
 import { ShoppingBagIcon } from '@heroicons/react/24/solid';
-import { converterPrice } from '../../utils/ converter';
+import { converterPrice } from '../../utils/converter';
 import sinImagen from '../../assets/sin-imagen.png';
 import { useUserContext } from '../../context/UserContext';
 

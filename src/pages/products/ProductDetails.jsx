@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import LayoutBase from '../../layout/LayoutBase';
 import sinImagen from '../../assets/sin-imagen.png';
-import { converterPrice } from '../../utils/ converter';
+import { converterPrice } from '../../utils/converter';
 import Sliders from '../../components/Sliders';
 import { useUserContext } from '../../context/UserContext';
 import { useFetch } from '../../hooks/useFetch';
 import { endPoints } from '../../services/endPoints/endPoints';
 import CardPoster from '../../components/card/poster/CardPoster';
 import Loading from '../../components/Loading';
-import flayerCotizanos from '../../assets/flayer-contizanos.svg';
+import flayerCotizanos from '../../assets/flayer-cotizanos.svg';
+import flayerCotizanosMobile from '../../assets/flayer-cotizanos-mobile.svg';
 
 const ProductDetails = () => {
     const { productId } = useParams();
@@ -53,7 +54,7 @@ const ProductDetails = () => {
                             {dataProduct?.data?.map((product) => (
                                 <div
                                     key={product?.id}
-                                    className="lg:w-8/12 w-11/12 m-1"
+                                    className="w-full lg:w-full  m-1"
                                 >
                                     <section className="w-full mt-6 p-4 flex shadow-sm md:flex-row flex-col">
                                         <div className="md:w-2/3 w-full">
@@ -210,12 +211,16 @@ const ProductDetails = () => {
                                     <CardPoster />
 
                                     <picture>
+                                        <source
+                                            srcSet={flayerCotizanosMobile}
+                                            media="(max-width:640px)"
+                                        />
                                         <img
                                             src={flayerCotizanos}
                                             alt="postPage"
                                         />
                                     </picture>
-                                    <h3 className="text-lg text-text-gray font-bold mt-8">
+                                    <h3 className="text-lg text-text-gray font-bold mt-8 ml-4">
                                         También te puede interesar
                                     </h3>
 

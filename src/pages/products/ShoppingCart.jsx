@@ -4,7 +4,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import CardShoppinCart from '../../components/card/CardShoppinCart';
 import { useUserContext } from '../../context/UserContext';
 import shoppin from '../../assets/shopping.png';
-import { converterPrice } from '../../utils/ converter';
+import { converterPrice } from '../../utils/converter';
 import LayoutBase from '../../layout/LayoutBase';
 import { endPoints } from '../../services/endPoints/endPoints';
 import { useFetch } from '../../hooks/useFetch';
@@ -26,7 +26,7 @@ const ShoppingCart = () => {
 
     // load data //
     const urlProduct = endPoints.products.getProducts;
-    const { data, loadingData, loading } = useFetch(urlProduct);
+    const { data, loadingData } = useFetch(urlProduct);
 
     useEffect(() => {
         loadingData();
@@ -35,8 +35,8 @@ const ShoppingCart = () => {
     return (
         <LayoutBase>
             <div className="w-full max-w-screen-xl">
-                <div className="flex w-full my-12 flex-wrap lg:flex-row flex-col justify-center items-center bg-slate-50 p-4">
-                    <div className="lg:w-8/12 w-11/12 m-1">
+                <div className="flex w-full my-4 flex-wrap  flex-col justify-center items-center p-4">
+                    <div className="w-full m-1">
                         {cart.length === 0 ? (
                             <div className="bg-white text-text-gray p-1     items-center flex flex-col gap-2">
                                 <img
@@ -53,21 +53,38 @@ const ShoppingCart = () => {
                                 </p>
                             </div>
                         ) : (
-                            cart.map((product) => (
-                                <CardShoppinCart
-                                    key={product.id}
-                                    cart={cart}
-                                    setCart={setCart}
-                                    onAddProduct={() => onAddProduct(product)}
-                                    decrase={() => decrase(product)}
-                                    deleteProduct={() => deleteProduct(product)}
-                                    {...product}
-                                />
-                            ))
+                            <div>
+                                <h2 className="font-extrabold w-full my-4 text-2xl text-gray-900">
+                                    10% OFF en compras mayores a $200.000 (No
+                                    aplica para productos que ya tengan
+                                    descuento).
+                                </h2>
+                                <h3 className="my-8 font-semibold">
+                                    Productos:
+                                </h3>
+                                <div className="border-b">
+                                    {cart.map((product) => (
+                                        <div key={product.id}>
+                                            <CardShoppinCart
+                                                cart={cart}
+                                                setCart={setCart}
+                                                onAddProduct={() =>
+                                                    onAddProduct(product)
+                                                }
+                                                decrase={() => decrase(product)}
+                                                deleteProduct={() =>
+                                                    deleteProduct(product)
+                                                }
+                                                {...product}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         )}
                     </div>
 
-                    <div className="text-text-gray bg-white lg:w-3/12 w-11/12 px-6 py-4 shadow-md m-4 h-72 items-center flex justify-center">
+                    <div className="text-text-gray w-full px-6 py-4 m-4 h-80 items-center flex justify-end">
                         {cart.length === 0 ? (
                             <div className="mt-2 text-text-gray">
                                 <h5 className="mb-4 font-bold">
@@ -81,7 +98,7 @@ const ShoppingCart = () => {
                         ) : (
                             <div className="gap-4 flex flex-col px-4">
                                 <h5 className="font-bold text-lg">
-                                    Resumen del Predido
+                                    Resumen del Pedido
                                 </h5>
                                 <p className="font-light">
                                     <span>{countProducts} productos</span>
@@ -92,7 +109,7 @@ const ShoppingCart = () => {
                                         $ {converterPrice(price)}
                                     </span>
                                 </p>
-                                <button className="bg-green-500 text-text-ligth items-center flex justify-center gap-2 rounded-lg w-50 mt-4 hover:bg-green-600 px-1 ">
+                                <button className="bg-green-500 text-text-ligth items-center flex justify-center gap-2 rounded-lg w-50 mt-4 hover:bg-green-600 px-14">
                                     Continuar compra
                                     <span>
                                         <FontAwesomeIcon

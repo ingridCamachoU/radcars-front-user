@@ -1,5 +1,5 @@
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { capitalLetter } from '../utils/ converter';
+import { capitalLetter } from '../utils/converter';
 
 const BreadCrumbs = () => {
     const location = useLocation();

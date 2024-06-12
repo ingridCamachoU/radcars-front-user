@@ -1,24 +1,24 @@
 import sinImagen from '../../assets/sin-imagen.png';
 import { TrashIcon } from '@heroicons/react/24/solid';
-import { converterPrice } from '../../utils/ converter';
+import { converterPrice } from '../../utils/converter';
 
 const CardShoppinCart = ({
     name,
     images,
-    net_price,
+    price,
     quantity,
     onAddProduct,
     decrase,
     deleteProduct,
 }) => {
-    const price = parseInt(net_price * quantity);
+    const priceProduct = parseInt(price * quantity);
 
     return (
-        <div className="items-center flex justify-between mt-8 bg-white p-2 flex-wrap sm:flex-row flex-col w-full sm:gap-0 gap-4">
+        <div className="items-center flex justify-between mt-4 bg-white p-2 flex-wrap sm:flex-row flex-col w-full sm:gap-0 gap-4 border-t">
             <div className="flex sm:w-8/12 w-full items-center">
-                <picture className="sm:w-1/5 w-1/3">
+                <picture className="sm:w-1/4 w-1/2">
                     <img
-                        className="w-16 h-16"
+                        className="w-32 h-32"
                         src={images.length > 0 ? images : sinImagen}
                         alt="sin imagen"
                     />
@@ -46,7 +46,7 @@ const CardShoppinCart = ({
                     </button>
                 </div>
                 <div className="flex w-4/6 justify-between px-4">
-                    <p>$ {converterPrice(price)}</p>
+                    <p>$ {converterPrice(priceProduct)}</p>
                     <button onClick={deleteProduct}>
                         <TrashIcon className="h-6 w-6 hover:text-text-blue" />
                     </button>

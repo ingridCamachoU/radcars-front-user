@@ -52,9 +52,9 @@ export default function UserContextProvider({ children }) {
 
     // add Porduct shopping cart
     const onAddProduct = (product) => {
-        const price = parseInt(product.net_price);
+        const priceProduct = parseInt(product.price);
 
-        setTotal(total + price);
+        setTotal(total + priceProduct);
         setCountProducts(countProducts + 1);
 
         const itemInCart = cart.find((element) => element.id === product.id);
@@ -68,7 +68,7 @@ export default function UserContextProvider({ children }) {
                 )
             );
             setCountProducts(countProducts + 1);
-            setTotal(total + price);
+            setTotal(total + priceProduct);
         } else {
             setCart((prevState) => [
                 ...prevState,
@@ -83,10 +83,10 @@ export default function UserContextProvider({ children }) {
     // Reduce products from cart
     const decrase = (product) => {
         const productrepeat = cart.find((element) => element.id === product.id);
-        const price = parseInt(product.net_price);
+        const priceProduct = parseInt(product.price);
 
         setCountProducts(countProducts - 1);
-        setTotal(total - price);
+        setTotal(total - priceProduct);
         setCart(
             cart.map((item) =>
                 item.id === product.id
@@ -104,9 +104,9 @@ export default function UserContextProvider({ children }) {
             return element !== foundId;
         });
 
-        const price = parseInt(product.net_price);
+        const priceProduct = parseInt(product.price);
         setCountProducts(countProducts - product.quantity);
-        setTotal(total - price * product.quantity);
+        setTotal(total - priceProduct * product.quantity);
         setCart(newCart);
     };
 
