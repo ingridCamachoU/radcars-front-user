@@ -220,7 +220,7 @@ const ProductDetails = () => {
                                             alt="postPage"
                                         />
                                     </picture>
-                                    <h3 className="text-lg text-text-gray font-bold mt-8 ml-4">
+                                    <h3 className="text-xl text-text-gray font-bold mt-8 ml-4">
                                         También te puede interesar
                                     </h3>
 

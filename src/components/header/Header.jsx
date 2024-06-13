@@ -1,8 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {
     Bars3Icon,
-    MoonIcon,
-    ShoppingBagIcon,
+    ShoppingCartIcon,
     UserCircleIcon,
     XMarkIcon,
 } from '@heroicons/react/24/solid';
@@ -80,7 +79,7 @@ const Header = () => {
                 <div className="flex gap-4 items-center justify-end pb-2 sm:pb-0 md:w-2/12 w-full">
                     <Link to={'shopping'}>
                         <p className="flex justify-center">
-                            <ShoppingBagIcon className="h-6 w-6 hover:text-text-blue" />
+                            <ShoppingCartIcon className="h-6 w-6 hover:text-text-blue" />
                             {countProducts !== 0 && (
                                 <span className="absolute text-text-ligth bg-background-blue rounded-3xl h-4 w-4 text-md p-1 items-center flex justify-center mt-3 font-light text-sm">
                                     {countProducts}

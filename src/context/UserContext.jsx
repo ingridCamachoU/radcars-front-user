@@ -6,13 +6,13 @@ const UserContext = createContext();
 
 export default function UserContextProvider({ children }) {
     const [cart, setCart] = useState(
-        JSON.parse(localStorage.getItem('shopping')) || []
+        JSON.parse(localStorage.getItem('shoppingRadCars')) || []
     );
     const [total, setTotal] = useState(
-        JSON.parse(localStorage.getItem('total')) || 0
+        JSON.parse(localStorage.getItem('totalRadcars')) || 0
     );
     const [countProducts, setCountProducts] = useState(
-        JSON.parse(localStorage.getItem('count')) || 0
+        JSON.parse(localStorage.getItem('countRadcars')) || 0
     );
 
     // search
@@ -35,15 +35,15 @@ export default function UserContextProvider({ children }) {
 
     // Save localStorage
     const saveLocal = () => {
-        localStorage.setItem('shopping', JSON.stringify(cart));
+        localStorage.setItem('shoppingRadCars', JSON.stringify(cart));
     };
 
     const countLocal = () => {
-        localStorage.setItem('count', JSON.stringify(countProducts));
+        localStorage.setItem('countRadcars', JSON.stringify(countProducts));
     };
 
     const totaltLocal = () => {
-        localStorage.setItem('total', JSON.stringify(total));
+        localStorage.setItem('totalRadcars', JSON.stringify(total));
     };
 
     saveLocal();

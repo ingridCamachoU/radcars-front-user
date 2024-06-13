@@ -18,6 +18,10 @@ export const router = createBrowserRouter([
                 element: <HomeIndex />,
             },
             {
+                path: '/productos/:productId',
+                element: <ProductDetails />,
+            },
+            {
                 path: 'productos',
                 element: <ProductIndex />,
             },

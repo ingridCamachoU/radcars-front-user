@@ -8,7 +8,7 @@ import Form from '../../components/form/Form';
 const ContacUsIndex = () => {
     return (
         <LayoutBase>
-            <div className="max-w-screen-xl">
+            <div className="items-center flex flex-col">
                 <picture>
                     <source
                         srcSet={contactsPageMovilPage}
@@ -17,7 +17,7 @@ const ContacUsIndex = () => {
                     <img src={contactsPage} alt="postPage" />
                 </picture>
 
-                <section className="w-full flex lg:flex-row flex-col mt-8 p-2 gap-6">
+                <section className="w-full flex lg:flex-row flex-col mt-8 p-2 gap-6 max-w-screen-xl">
                     <div className="lg:w-2/4 w-full justify-center flex flex-col gap-2 sm:px-6 px-1">
                         <div className="w-full flex items-center justify-center">
                             <img
@@ -79,12 +79,12 @@ const ContacUsIndex = () => {
                 </section>
 
                 <section className="w-full flex mb-12 flex-col">
-                    <h2 className="font-semibold m-4 px-2 text-text-blue text-lg">
+                    <h2 className="font-semibold m-4 pl-8 text-text-blue text-lg pb-4">
                         Ubicación
                     </h2>
                     <div className="w-full flex items-center justify-center">
                         <iframe
-                            className="w-full h-80"
+                            className="w-11/12 h-80"
                             title={'Maps'}
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15808.130561075943!2d-72.5128135883911!3d7.8916540415040055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645d459ed76c7%3A0x27db1d19ad3414b!2sRADIADORES%20GABRIEL-%20RADCARS!5e0!3m2!1ses!2sco!4v1689368657114!5m2!1ses!2sco"
                             loading="lazy"

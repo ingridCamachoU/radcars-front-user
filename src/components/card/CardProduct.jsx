@@ -1,4 +1,4 @@
-import { ShoppingBagIcon } from '@heroicons/react/24/solid';
+import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 import { converterPrice } from '../../utils/converter';
 import sinImagen from '../../assets/sin-imagen.png';
 import { useUserContext } from '../../context/UserContext';
@@ -43,14 +43,14 @@ const CardProduct = (product) => {
                 </span>
                 {cart.some((item) => item.id === product?.id) ? (
                     <span className="pr-4" onClick={(e) => deleteShopping(e)}>
-                        <ShoppingBagIcon className="h-5 w-5 text-text-blue hover:text-text-gray active:scale-95 " />
+                        <ShoppingCartIcon className="h-5 w-5 text-text-blue hover:text-text-gray active:scale-95 " />
                     </span>
                 ) : (
                     <span
                         className="pr-4"
                         onClick={(e) => addShopping(e, product)}
                     >
-                        <ShoppingBagIcon className="h-5 w-5  hover:text-text-blue active:scale-95" />
+                        <ShoppingCartIcon className="h-5 w-5  hover:text-text-blue active:scale-95" />
                     </span>
                 )}
             </p>
