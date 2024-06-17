@@ -84,17 +84,9 @@ const ShoppingCart = () => {
                         )}
                     </div>
 
-                    <div className="text-text-gray w-full px-6 py-4 m-4 h-80 items-center flex justify-end">
+                    <div className="text-text-gray w-full px-6 py-4 m-4 items-center flex justify-end">
                         {cart.length === 0 ? (
-                            <div className="mt-2 text-text-gray">
-                                <h5 className="mb-4 font-bold">
-                                    Resumen de Compra
-                                </h5>
-                                <p>
-                                    Aquí verás los importes de tu compra una vez
-                                    que agregues productos.
-                                </p>
-                            </div>
+                            <div></div>
                         ) : (
                             <div className="gap-4 flex flex-col px-4">
                                 <h5 className="font-bold text-lg">
