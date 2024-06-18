@@ -51,11 +51,11 @@ export const router = createBrowserRouter([
                 element: <Login />,
             },
             {
-                path: '/login/recover',
+                path: 'recover',
                 element: <Recover />,
             },
             {
-                path: '/register',
+                path: 'register',
                 element: <Register />,
             },
             {

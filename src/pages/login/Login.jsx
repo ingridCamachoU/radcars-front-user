@@ -151,7 +151,7 @@ const Login = () => {
                         </div>
                         <div className=" mt-2">
                             <Link
-                                to="/login/recover"
+                                to="/recover"
                                 className="font-semibold text-blue-800 hover:text-blue-950 flex my-4"
                             >
                                 ¿Olvidaste tu contraseña?
