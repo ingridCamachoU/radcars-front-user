@@ -101,15 +101,20 @@ const ShoppingCart = () => {
                                         $ {converterPrice(price)}
                                     </span>
                                 </p>
-                                <button className="bg-green-500 text-text-ligth items-center flex justify-center gap-2 rounded-lg w-50 mt-4 hover:bg-green-600 px-14">
-                                    Continuar compra
-                                    <span>
+
+                                <a
+                                    href="https://api.whatsapp.com/message/5ROO3OPKQPO5H1?autoload=1&app_absent=0"
+                                    target="_blank"
+                                    className="bg-green-500 text-text-ligth items-center flex justify-center gap-2 rounded-lg w-50 mt-4 hover:bg-green-600 px-14 cursor-pointer"
+                                >
+                                    <span className="flex justify-center items-center">
+                                        Continuar compra
                                         <FontAwesomeIcon
                                             icon={faWhatsapp}
                                             className="h-8 w-8 text-text-ligth m-1"
                                         />
                                     </span>
-                                </button>
+                                </a>
                             </div>
                         )}
                     </div>
