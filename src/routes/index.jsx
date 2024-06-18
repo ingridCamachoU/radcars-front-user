@@ -10,7 +10,7 @@ import Login from '../pages/login/Login';
 import PublicLayout from '../layout/PublicLayout';
 import User from '../pages/user/User';
 import Register from '../pages/login/Register';
-import Recover from '../pages/login/recover';
+import Recover from '../pages/login/Recover';
 import NotFound from '../pages/NotFound';
 
 export const router = createBrowserRouter([
