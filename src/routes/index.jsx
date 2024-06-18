@@ -7,11 +7,16 @@ import ShoppingCart from '../pages/products/ShoppingCart';
 import ContacUsIndex from '../pages/contactUs/ContacUsIndex';
 import TechnicalServiceIndex from '../pages/technicalService/TechnicalServiceIndex';
 import Login from '../pages/login/Login';
+import PublicLayout from '../layout/PublicLayout';
+import User from '../pages/user/User';
+import Register from '../pages/login/Register';
+import Recover from '../pages/login/recover';
+import NotFound from '../pages/NotFound';
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <PrivateLayout />,
+        element: <PublicLayout />,
         children: [
             {
                 index: true,
@@ -44,6 +49,28 @@ export const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login />,
+            },
+            {
+                path: '/login/recover',
+                element: <Recover />,
+            },
+            {
+                path: '/register',
+                element: <Register />,
+            },
+            {
+                path: '/*',
+                element: <NotFound />,
+            },
+            {
+                path: 'private',
+                element: <PrivateLayout />,
+                children: [
+                    {
+                        index: true,
+                        element: <User />,
+                    },
+                ],
             },
         ],
     },

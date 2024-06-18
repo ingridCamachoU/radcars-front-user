@@ -21,6 +21,10 @@ export default function UserContextProvider({ children }) {
         endPoints.products.getProducts
     );
 
+    //--user--//
+    const [user, setUser] = useState(false);
+    const [token, setToken] = useState(false);
+
     //--- Load Data Product---//
     const {
         data: dataProduct,
@@ -29,9 +33,29 @@ export default function UserContextProvider({ children }) {
         loading,
     } = useFetch(urlProduct);
 
+    const saveToken = (token) => {
+        const expiration = new Date();
+        expiration.setTime(expiration.getTime() + 2 * 60 * 60 * 1000);
+        localStorage.setItem('tokenRadcars', token);
+        localStorage.setItem('tokenExpirationRadcars', expiration.getTime());
+    };
+
     useEffect(() => {
+        const storedToken = localStorage.getItem('tokenRadcars');
+        const expiration = localStorage.getItem('tokenExpirationRadcars');
+        const currentTime = new Date().getTime();
+
+        if (storedToken && expiration && currentTime < parseInt(expiration)) {
+            setUser(JSON.parse(localStorage.getItem('userRadcars')));
+            setToken(storedToken);
+        } else {
+            // Token expirado, limpiar el localStorage
+            localStorage.removeItem('tokenRadcars');
+            localStorage.removeItem('tokenExpirationRadcars');
+            localStorage.removeItem('userRadcars');
+        }
         loadDataProduct();
-    }, [urlProduct]);
+    }, [urlProduct, token]);
 
     // Save localStorage
     const saveLocal = () => {
@@ -122,7 +146,11 @@ export default function UserContextProvider({ children }) {
                 total,
                 setCountProducts,
                 setTotal,
-
+                user,
+                setUser,
+                saveToken,
+                token,
+                setToken,
                 dataProduct,
                 setUrlProduct,
                 urlProduct,

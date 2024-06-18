@@ -17,4 +17,12 @@ export const endPoints = {
     categories: {
         getCategories: `${URL}${VERSION}/categories/`,
     },
+    users: {
+        getUser: `${URL}${VERSION}/users/`,
+        deleUser: (id) => `${URL}${VERSION}/users/${id}/`,
+        updateUser: (id) => `${URL}${VERSION}/users/${id}/`,
+    },
+    login: {
+        getLogin: `${URL}${VERSION}/users/login`,
+    },
 };
